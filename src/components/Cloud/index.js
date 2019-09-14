@@ -35,7 +35,7 @@ function getLayerStyles(layer) {
   styles.filter = `brightness(${brightness}) blur(${blur})`
 
   styles.duration = Math.max((layer / 20) * 1.2 + 1, 1)
-  styles.maxOffset = Math.max(((20 - layer) / 20) * 40 + 20, 25)
+  styles.maxOffset = Math.max((layer / 20) * 40 + 20, 25)
   styles.velocity = Math.min(Math.pow(layer / 20, 2) * 50 + 25, 80)
   return styles
 }
