@@ -1,22 +1,27 @@
 import React, { useState, useEffect } from "react"
 import tw from "tailwind.macro"
 import styled from "styled-components/macro"
+import { Tween } from "react-gsap"
 
-const Image = styled.img.attrs({
-  style: ({ x, anim }) => ({
-    transform: `translateX(-${100 - x + 1}%) translateY(-50%)`,
-    left: `${x + 1}vw`,
-    transition: `all ${anim === "true" ? "1s" : "0s"} linear`
-  })
-})`
+const Container = styled.div.attrs(props => ({
+  style: {
+    transform: `translateX(-${100 - props.x + 1}%) translateY(-50%)`,
+    left: `${props.x + 1}vw`,
+    transition: `all ${props.anim === "true" ? "1s" : "0s"} linear`
+  }
+}))`
   position: absolute;
   top: ${props => props.y}%;
+  z-index: 0;
+  height: 30vh;
+`
 
-  z-index: ${props => props.z};
-  height: ${props => props.height}vh;
-  filter: brightness(${props => props.brightness})
-    blur(${props => props.blur}px);
-  opacity: ${props => props.opacity};
+const Image = styled.img.attrs(props => ({
+  style: {
+    transform: `translateY(${props.yOffset}px)`
+  }
+}))`
+  height: 100%;
 `
 
 export default function Cloud(props) {
@@ -24,12 +29,10 @@ export default function Cloud(props) {
     image,
     xInit = 0,
     y = 50,
-    zIndex = 0,
-    height = 35,
     velocity = 60,
-    brightness = 1,
-    blur = 0,
-    opacity = 1
+    offset,
+    maxOffset,
+    ...restProps
   } = props
 
   const [moving, setMoving] = useState("false")
@@ -55,16 +58,10 @@ export default function Cloud(props) {
   }, [moving, velocity, xPos])
 
   return (
-    <Image
-      src={image}
-      x={xPos}
-      y={y}
-      z={zIndex}
-      height={height}
-      anim={anim}
-      brightness={brightness}
-      opacity={opacity}
-      blur={blur}
-    />
+    <Container x={xPos} y={y} anim={anim} {...restProps}>
+      <Tween to={{ y: `${maxOffset * offset}px` }} duration={2}>
+        <Image src={image} />
+      </Tween>
+    </Container>
   )
 }
