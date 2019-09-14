@@ -2,13 +2,9 @@ import React from "react"
 import tw from "tailwind.macro"
 import styled from "styled-components/macro"
 
-const Container = styled.div`
-  ${tw`
-    w-full h-screen
+const Container = tw.div`
+    w-full h-full
     flex justify-center items-center
-  `};
-
-  background: linear-gradient(180deg, #598ac2, #639cdf);
 `
 
 const Text = tw.h1`
@@ -16,7 +12,7 @@ const Text = tw.h1`
     m-0
 `
 
-export default function Landing(props) {
+export default function Intro(props) {
   return (
     <Container>
       <Text>SASH</Text>
