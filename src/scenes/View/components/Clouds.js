@@ -10,36 +10,39 @@ import cloud4 from "assets/clouds/cloud4.png"
 import cloud5 from "assets/clouds/cloud5.png"
 
 export default function Clouds(props) {
-  const { mousePos = [0, 0], orientation } = props
+  const { mousePos = [0.5, 0.5], orientation, scrollDist } = props
 
-  const offset = orientation ? (orientation.beta / 180) * 1.5 : mousePos[1]
+  const scrollOffset = (scrollDist - 0.75) * -4.5
+  const tiltOffset = orientation ? (orientation.beta / 180) * 1.5 : 1
+  const mouseOffset = (mousePos[1] - 0.5) * 1.5
+
+  const offset = scrollOffset * tiltOffset * mouseOffset
 
   return (
     <>
       <Cloud
         image={cloud1}
         y={20}
-        xInit={80}
-        velocity={40}
+        xInit={60}
         offset={offset}
-        maxOffset={85}
+        layer={9}
         style={{ height: "25vh" }}
       />
       <Cloud
         image={cloud2}
+        xInit={0}
         y={28}
-        velocity={25}
         offset={offset}
-        maxOffset={10}
+        layer={15}
         style={{ height: "30vh" }}
       />
+      {/* long and lazy */}
       <Cloud
         image={cloud3}
-        y={69}
         xInit={50}
-        velocity={30}
+        y={69}
         offset={offset}
-        maxOffset={20}
+        layer={4}
         style={{ height: "30vh" }}
       />
       <Cloud
@@ -47,17 +50,16 @@ export default function Clouds(props) {
         y={80}
         xInit={20}
         offset={offset}
-        maxOffset={30}
-        style={{ opacity: 0.5, zIndex: 3, filter: "blur(2px)", height: "38vh" }}
+        layer={24}
+        style={{ height: "38vh" }}
       />
       <Cloud
         image={cloud5}
         y={99}
-        xInit={60}
-        velocity={75}
+        xInit={78}
         offset={offset}
-        maxOffset={60}
-        style={{ filter: "brightness(1.1)", height: "35vh" }}
+        layer={19}
+        style={{ height: "35vh" }}
       />
     </>
   )
