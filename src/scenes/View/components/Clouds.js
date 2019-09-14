@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import tw from "tailwind.macro"
 import styled from "styled-components/macro"
 
@@ -10,17 +10,6 @@ import cloud5 from "assets/clouds/cloud5.png"
 import Cloud from "components/Cloud"
 
 export default function Clouds(props) {
-  const images = [cloud1, cloud2, cloud3, cloud4, cloud5]
-  const numClouds = 5
-
-  const [clouds, setClouds] = useState(null)
-
-  useEffect(() => {
-    if (!clouds) {
-      console.log("distribute clouds")
-    }
-  }, [clouds])
-
   return (
     <>
       <Cloud image={cloud1} y={20} xInit={80} velocity={40} height={25} />
@@ -35,7 +24,7 @@ export default function Clouds(props) {
         opacity={0.5}
         blur={2}
       />
-      <Cloud image={cloud5} y={99} xInit={60} velocity={70} brightness={1.1} />
+      <Cloud image={cloud5} y={99} xInit={60} velocity={75} brightness={1.1} />
     </>
   )
 }

@@ -2,16 +2,20 @@ import React, { useState, useEffect } from "react"
 import tw from "tailwind.macro"
 import styled from "styled-components/macro"
 
-const Image = styled.img`
+const Image = styled.img.attrs({
+  style: ({ x, anim }) => ({
+    transform: `translateX(-${100 - x + 1}%) translateY(-50%)`,
+    left: `${x + 1}vw`,
+    transition: `all ${anim === "true" ? "1s" : "0s"} linear`
+  })
+})`
   position: absolute;
   top: ${props => props.y}%;
-  left: ${props => props.x + 1}vw;
-  transform: translateX(-${props => 100 - props.x + 1}%) translateY(-50%);
+
   z-index: ${props => props.z};
   height: ${props => props.height}vh;
   filter: brightness(${props => props.brightness})
     blur(${props => props.blur}px);
-  transition: all ${props => (props.anim === "true" ? "1s" : "0s")} linear;
   opacity: ${props => props.opacity};
 `
 
@@ -51,18 +55,16 @@ export default function Cloud(props) {
   }, [moving, velocity, xPos])
 
   return (
-    <>
-      <Image
-        src={image}
-        x={xPos}
-        y={y}
-        z={zIndex}
-        height={height}
-        anim={anim}
-        brightness={brightness}
-        opacity={opacity}
-        blur={blur}
-      />
-    </>
+    <Image
+      src={image}
+      x={xPos}
+      y={y}
+      z={zIndex}
+      height={height}
+      anim={anim}
+      brightness={brightness}
+      opacity={opacity}
+      blur={blur}
+    />
   )
 }
