@@ -1,5 +1,10 @@
 import React, { useEffect } from "react"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom"
 import useReactRouter from "use-react-router"
 
 import GlobalStyles from "styles/globalStyles"
@@ -7,7 +12,7 @@ import FullScreenLoading from "components/FullScreenLoading"
 import ScrollToTop from "components/ScrollToTop"
 import GA from "services/ga"
 
-const SiteUserView = React.lazy(() => import("scenes/SiteUserView"))
+const View = React.lazy(() => import("scenes/View"))
 
 const GoogleAnalytics = () => {
   const { location } = useReactRouter()
@@ -24,8 +29,8 @@ export default function App() {
           <GoogleAnalytics />
           <ScrollToTop>
             <Switch>
-              <Route path="/" component={SiteUserView} />
-              {/* TODO: 404 Page */}
+              <Route exact path="/" component={View} />
+              <Redirect to="/" />
             </Switch>
           </ScrollToTop>
         </Router>
