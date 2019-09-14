@@ -16,4 +16,6 @@ export const Content = styled.div`
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(180deg, #48c5ee, #4dd2fa);
+  position: relative;
+  overflow: hidden;
 `

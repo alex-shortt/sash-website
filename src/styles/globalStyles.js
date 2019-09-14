@@ -9,7 +9,5 @@ export default createGlobalStyle`
   body {
     ${tw`text-gray-800`};
     font-family: Avenir, Lato, Roboto, sans-serif;
-    overflow: auto;
-    overflow-x: hidden;
   }
 `

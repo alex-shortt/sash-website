@@ -5,6 +5,8 @@ import Helmet from "components/Helmet"
 import Intro from "scenes/Intro"
 import { Landing, Gap, Content } from "components/Containers"
 
+import Clouds from "./components/Clouds"
+
 export default function View(props) {
   return (
     <>
@@ -13,7 +15,9 @@ export default function View(props) {
         <Intro />
       </Landing>
       <Gap />
-      <Content />
+      <Content>
+        <Clouds />
+      </Content>
     </>
   )
 }
