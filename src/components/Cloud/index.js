@@ -22,6 +22,8 @@ const Image = styled.img.attrs(props => ({
   }
 }))`
   height: 100%;
+  user-select: none;
+  pointer-events: none;
 `
 
 function getLayerStyles(layer) {
