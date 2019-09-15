@@ -4,6 +4,7 @@ export const Landing = styled.div`
   width: 100%;
   height: 100vh;
   background: linear-gradient(180deg, #598ac2, #639cdf);
+  position: relative;
 `
 
 export const Gap = styled.div`
