@@ -17,7 +17,7 @@ const Space = tw.div`
 const WriteContainer = styled.div`
   width: 100vw;
   max-width: 700px;
-  margin: 0 5rem;
+  margin: 0 2rem;
   display: flex;
 `
 
@@ -30,14 +30,19 @@ const getRouteArray = route => {
 }
 
 export default function SkyWriteRoute(props) {
-  const { route, delay = 0 } = props
+  const { route, delay: rowDelay } = props
+
+  const planeTiming = [5.5, rowDelay + 0.5] // time, delay
+  const cloudTiming = [rowDelay + 2 + 0.5, 0.1] // delay, iterative delay
 
   return (
     <Container>
-      <Plane />
+      <Plane timing={planeTiming} />
       <WriteContainer>
         {getRouteArray(route).map((item, i) => (
-          <Space>{item && <WriteCloud delay={delay + i * 0.1 + 2} />}</Space>
+          <Space>
+            {item && <WriteCloud delay={cloudTiming[0] + i * cloudTiming[1]} />}
+          </Space>
         ))}
       </WriteContainer>
     </Container>

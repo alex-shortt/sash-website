@@ -12,19 +12,19 @@ const Container = styled.div`
   transform: translateY(-50%)
     ${props =>
       props.start === "true" ? "translateX(100%)" : "translateX(-100%)"};
-  transition: all 5.8s linear;
+  transition: all ${props => props.time}s linear;
 `
 
 export default function Plane(props) {
-  const { delay } = props
+  const { timing } = props
 
   const [start, setStart] = useState("false")
 
   useEffect(() => {
     if (start === "false") {
-      setStart("true")
+      setTimeout(() => setStart("true"), timing[1] * 1000)
     }
-  }, [start])
+  }, [start, timing])
 
-  return <Container start={start} />
+  return <Container start={start} time={timing[0]} />
 }
