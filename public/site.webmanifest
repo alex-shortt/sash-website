@@ -1,15 +1,15 @@
 {
-    "name": "Metaplug",
-    "short_name": "Metaplug",
+    "name": "Sash",
+    "short_name": "Sash",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png?v=alQaqddykL",
+            "src": "/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png?v=alQaqddykL",
-            "sizes": "512x512",
+            "src": "/android-chrome-256x256.png",
+            "sizes": "256x256",
             "type": "image/png"
         }
     ],

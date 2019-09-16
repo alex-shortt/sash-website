@@ -19,14 +19,6 @@ export default function GapClouds(props) {
 
   return (
     <Container>
-      <Helmet title="GapClouds" />
-      {/* <Cloud */}
-      {/*  image={cloud1} */}
-      {/*  y={23} */}
-      {/*  xInit={40} */}
-      {/*  layer={7} */}
-      {/*  style={{ height: "25vh" }} */}
-      {/* /> */}
       <Cloud
         image={cloud5}
         y={20}

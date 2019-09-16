@@ -14,6 +14,8 @@ const Wrapper = styled.div`
   margin: 0 auto;
   position: relative;
   z-index: 20;
+  box-sizing: border-box;
+  padding: 0 2rem;
   padding-bottom: 10rem;
 `
 
@@ -25,7 +27,6 @@ const Spacer = styled.div`
 export default function Main(props) {
   return (
     <>
-      <Helmet title="Main" />
       <Clouds {...props} />
       <Wrapper>
         <Song />

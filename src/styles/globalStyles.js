@@ -12,10 +12,9 @@ export default createGlobalStyle`
     font-family: "FuturaPT";  
     src: url(${FuturaPT});
   }
-
-  body {
-    ${tw`text-gray-800`};
-    font-family: Avenir, Lato, Roboto, sans-serif;
-    font-family: "FuturaPT";
+  
+  body, html {
+    overflow-x: hidden;
+    font-family: "FuturaPT", Avenir, Lato, Roboto, sans-serif;
   }
 `

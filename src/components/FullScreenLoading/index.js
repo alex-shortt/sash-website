@@ -23,7 +23,7 @@ const FullScreenWrapper = styled.div`
   left: 0;
   z-index: 10;
 
-  background: linear-gradient(135deg, rgba(13, 23, 187, 0.93), #a90a77);
+  background: linear-gradient(135deg, #598ac2, #4dd2fa);
   background-size: 400% 400%;
 
   animation: ${scrollGradient} 40s ease infinite;
