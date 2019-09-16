@@ -1,5 +1,4 @@
-import React, { useState, useCallback, useRef, useEffect } from "react"
-import styled from "styled-components/macro"
+import React, { useState, useCallback, useEffect } from "react"
 
 import Helmet from "components/Helmet"
 import Intro from "scenes/Intro"
@@ -33,7 +32,6 @@ export default function View(props) {
     if (!cloudOffset) {
       window.addEventListener("deviceorientation", handleOrientationChange)
       window.addEventListener("scroll", handleScrollChange)
-      console.log("111")
     }
 
     setCloudOffset(orientation + scrollDist + mouseY * 1.2 - 1)
