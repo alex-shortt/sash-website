@@ -6,17 +6,20 @@ import Helmet from "components/Helmet"
 
 import Clouds from "./components/Clouds"
 import Song from "./components/Song"
+import Tickets from "./components/Tickets"
 
 const Wrapper = styled.div`
   width: 100%;
   max-width: 750px;
   margin: 0 auto;
-  height: 100px;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   z-index: 20;
+  padding-bottom: 10rem;
+`
+
+const Spacer = styled.div`
+  width: 100%;
+  height: 300px;
 `
 
 export default function Main(props) {
@@ -26,6 +29,8 @@ export default function Main(props) {
       <Clouds {...props} />
       <Wrapper>
         <Song />
+        <Spacer />
+        <Tickets />
       </Wrapper>
     </>
   )

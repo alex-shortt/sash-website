@@ -2,25 +2,25 @@ import React from "react"
 import tw from "tailwind.macro"
 import styled from "styled-components/macro"
 
-import albumCover from "assets/content/album-cover.jpg"
 import Text from "components/Text"
-import Subtitle from "components/Subtitle"
 import Button from "components/Button"
+import Subtitle from "components/Subtitle"
 import Image from "components/Image"
+import tourImage from "assets/content/tour-image.jpg"
 
 const Container = styled.div`
   text-align: center;
 `
 
-export default function Song(props) {
+export default function Tickets(props) {
   return (
     <Container>
-      <Image src={albumCover} />
-      <Text>Sleepy Eyes</Text>
-      <Subtitle>Now streaming on all platforms</Subtitle>
+      <Image src={tourImage} />
+      <Text>Get tickets to my live show</Text>
+      <Subtitle>Dec 20, 2019 @ Exchange LA</Subtitle>
       <br />
       <br />
-      <Button>Listen Now</Button>
+      <Button>Purchase Tickets</Button>
     </Container>
   )
 }

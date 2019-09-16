@@ -15,6 +15,8 @@ const Container = styled.div.attrs(props => ({
   z-index: 0;
   left: 0;
   height: 30vh;
+  pointer-events: none;
+  user-select: none;
 `
 
 const Image = styled.img.attrs(props => ({
