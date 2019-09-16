@@ -10,13 +10,7 @@ import cloud4 from "assets/clouds/cloud4.png"
 import cloud5 from "assets/clouds/cloud5.png"
 
 export default function Clouds(props) {
-  const { mousePos = [0.5, 0.5], orientation, scrollDist } = props
-
-  const scrollOffset = (scrollDist - 0.75) * 2
-  const tiltOffset = orientation ? (orientation.beta / 180) * 2.4 : 0
-  const mouseOffset = (mousePos[1] - 0.5) * 1.5
-
-  const offset = (scrollOffset + tiltOffset + mouseOffset) * 0.5
+  const { offset } = props
 
   return (
     <>

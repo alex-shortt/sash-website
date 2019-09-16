@@ -29,6 +29,8 @@ const SkyWriteContainer = styled.div`
 `
 
 export default function Intro(props) {
+  const { offset } = props
+
   const route1 = "xxx     xx    xxx    x  x"
   const route2 = "x      x  x   x      x  x"
   const route3 = "xxxx   xxxx   xxxx   xxxx"
@@ -42,6 +44,7 @@ export default function Intro(props) {
         y={23}
         xInit={40}
         layer={14}
+        offset={offset}
         style={{ height: "25vh" }}
       />
       <Cloud
@@ -49,6 +52,7 @@ export default function Intro(props) {
         y={80}
         xInit={25}
         layer={3}
+        offset={offset}
         style={{ height: "34vh" }}
       />
       <Cloud
@@ -56,6 +60,7 @@ export default function Intro(props) {
         y={40}
         xInit={70}
         layer={22}
+        offset={offset}
         style={{ height: "20vh" }}
       />
       <SkyWriteContainer>
