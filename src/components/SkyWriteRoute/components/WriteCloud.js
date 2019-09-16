@@ -23,9 +23,8 @@ const fadeIn = finalOpacity => keyframes`
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  transform: scale(1.3);
-  filter: brightness(${props => props.brightness})
-    blur(${props => props.blur}px);
+  transform: scale(1.3) translateX(${props => props.horizontalOffset}vw);
+  filter: brightness(${props => props.brightness});
   opacity: 0;
   animation: ${props => fadeIn(props.opacity)} 2.5s ease-out forwards;
   animation-delay: ${props => props.delay}s;
@@ -39,7 +38,7 @@ export default function WriteCloud(props) {
   )
   const brightness = useRef(Math.random() * 0.16 + 1)
   const opacity = useRef(Math.random() * 0.2 + 0.8)
-  const blur = useRef(Math.random() * 1.5)
+  const horizontalOffset = useRef(Math.random() * 0.75 - 0.75 / 2)
 
   return (
     <Container>
@@ -47,8 +46,8 @@ export default function WriteCloud(props) {
         src={image.current}
         brightness={brightness.current}
         opacity={opacity.current}
-        blur={blur.current}
         delay={delay}
+        horizontalOffset={horizontalOffset.current}
       />
     </Container>
   )
