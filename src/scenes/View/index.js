@@ -8,11 +8,10 @@ import GapClouds from "scenes/GapClouds"
 import { Landing, Gap, Content } from "components/Containers"
 
 export default function View(props) {
-  const [listenersSet, setListenersSet] = useState("false")
   const [mouseY, setMouseY] = useState(0)
   const [orientation, setOrientation] = useState(0)
   const [scrollDist, setScrollDist] = useState(0)
-  const [cloudOffset, setCloudOffset] = useState(0)
+  const [cloudOffset, setCloudOffset] = useState()
 
   const handleOrientationChange = useCallback(
     e => setOrientation(e.beta / 180 - 0.5),
@@ -31,17 +30,17 @@ export default function View(props) {
   )
 
   useEffect(() => {
-    if (listenersSet === "false") {
+    if (!cloudOffset) {
       window.addEventListener("deviceorientation", handleOrientationChange)
       window.addEventListener("scroll", handleScrollChange)
-      setListenersSet("true")
+      console.log("111")
     }
 
     setCloudOffset(orientation + scrollDist + mouseY * 1.2 - 1)
   }, [
+    cloudOffset,
     handleOrientationChange,
     handleScrollChange,
-    listenersSet,
     mouseY,
     orientation,
     scrollDist
