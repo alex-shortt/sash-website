@@ -44,7 +44,8 @@ export default function SkyWriteRoute(props) {
       <Plane timing={planeTiming} />
       <WriteContainer>
         {getRouteArray(route).map((item, i) => (
-          <Space>
+          // eslint-disable-next-line react/no-array-index-key
+          <Space key={i}>
             {item && <WriteCloud delay={cloudTiming[0] + i * cloudTiming[1]} />}
           </Space>
         ))}

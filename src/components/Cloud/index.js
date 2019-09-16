@@ -5,15 +5,15 @@ import { Tween } from "react-gsap"
 
 const Container = styled.div.attrs(props => ({
   style: {
-    transform: `translateX(-${100 - props.x}%) translateX(${
-      props.x
-    }vw) translateY(-${props.y}%)`,
+    transform: `translateX(${props.x}vw) translateX(-${100 -
+      props.x}%) translateY(-${props.y}%)`,
     transition: `all ${props.anim === "true" ? "1s" : "0s"} linear`
   }
 }))`
   position: absolute;
   top: ${props => props.y}%;
   z-index: 0;
+  left: 0;
   height: 30vh;
 `
 
@@ -31,9 +31,9 @@ function getLayerStyles(layer) {
   const styles = {}
 
   styles.zIndex = layer
-  styles.opacity = Math.min(1, layer / 20 + 0.5)
+  styles.opacity = Math.min(1, (layer / 20) * 0.7 + 0.4)
 
-  const brightness = Math.max((layer / 20) * 0.9, 1)
+  const brightness = Math.max((layer / 20) * 0.8, 1)
   // const blur = `${Math.max(((20 - layer) / 20) * 2.5, 0)}px`
   styles.filter = `brightness(${brightness})`
 

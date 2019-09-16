@@ -38,7 +38,7 @@ export default function WriteCloud(props) {
   )
   const brightness = useRef(Math.random() * 0.16 + 1)
   const opacity = useRef(Math.random() * 0.2 + 0.8)
-  const horizontalOffset = useRef(Math.random() * 0.75 - 0.75 / 2)
+  const horizontalOffset = useRef(Math.random() * 0.5 - 0.5 / 2)
 
   return (
     <Container>

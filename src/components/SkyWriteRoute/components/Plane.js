@@ -7,7 +7,7 @@ import planeImage from "assets/plane/plane.png"
 const Container = styled.img`
   position: absolute;
   top: 50%;
-  left: 0px;
+  left: 0;
   width: auto;
   height: 100%;
   transform: translateY(-50%)

@@ -8,12 +8,14 @@ import { Landing, Gap, Content } from "components/Containers"
 import Clouds from "./components/Clouds"
 
 export default function View(props) {
+  const [listenersSet, setListenersSet] = useState("false")
   const [mousePos, setMousePos] = useState()
   const [orientation, setOrientation] = useState()
   const [scrollDist, setScrollDist] = useState()
   const contentContainer = useRef()
 
-  const updateMousePosition = useCallback(e => {
+  const handleOrientationChange = useCallback(e => setOrientation(e), [])
+  const handleMousePositionChange = useCallback(e => {
     const { height } = contentContainer.current.getBoundingClientRect()
     const { offsetTop } = contentContainer.current
     const scrollTop = offsetTop - window.innerHeight
@@ -23,22 +25,26 @@ export default function View(props) {
       Math.max(window.scrollY - scrollTop + e.clientY, 0) / height - 1
     ])
   }, [])
+  const handleScrollChange = useCallback(() => {
+    const { height } = contentContainer.current.getBoundingClientRect()
+    const { offsetTop } = contentContainer.current
+    const scrollTop = offsetTop - window.innerHeight
+    setScrollDist((window.scrollY - scrollTop) / height)
+  }, [])
 
   useEffect(() => {
-    window.addEventListener("deviceorientation", e => setOrientation(e), true)
-
-    window.addEventListener(
-      "scroll",
-      e => {
-        const { height } = contentContainer.current.getBoundingClientRect()
-        const { offsetTop } = contentContainer.current
-        const scrollTop = offsetTop - window.innerHeight
-        // console.log(Math.max((window.scrollY - scrollTop) / height, 0))
-        setScrollDist((window.scrollY - scrollTop) / height)
-      },
-      true
-    )
-  }, [])
+    if (listenersSet === "false") {
+      window.addEventListener("deviceorientation", handleOrientationChange)
+      window.addEventListener("scroll", handleScrollChange)
+      setListenersSet("true")
+    }
+  }, [
+    handleOrientationChange,
+    handleScrollChange,
+    listenersSet,
+    orientation,
+    scrollDist
+  ])
 
   return (
     <>
@@ -47,7 +53,7 @@ export default function View(props) {
         <Intro />
       </Landing>
       <Gap />
-      <Content onMouseMove={updateMousePosition} ref={contentContainer}>
+      <Content onMouseMove={handleMousePositionChange} ref={contentContainer}>
         <Clouds
           mousePos={mousePos}
           orientation={orientation}

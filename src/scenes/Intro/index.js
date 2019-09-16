@@ -4,8 +4,9 @@ import styled from "styled-components/macro"
 
 import Cloud from "components/Cloud"
 import SkyWriteRoute from "components/SkyWriteRoute"
-import bigCloud1 from "assets/clouds/cloud1.png"
-import bigCloud3 from "assets/clouds/cloud3.png"
+import cloud1 from "assets/clouds/cloud1.png"
+import cloud2 from "assets/clouds/cloud2.png"
+import cloud3 from "assets/clouds/cloud3.png"
 
 const Container = tw.div`
     w-full h-full
@@ -24,6 +25,7 @@ const SkyWriteContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 20;
 `
 
 export default function Intro(props) {
@@ -36,18 +38,25 @@ export default function Intro(props) {
   return (
     <Container>
       <Cloud
-        image={bigCloud1}
-        y={20}
-        xInit={60}
-        layer={17}
+        image={cloud1}
+        y={23}
+        xInit={40}
+        layer={14}
         style={{ height: "25vh" }}
       />
       <Cloud
-        image={bigCloud3}
+        image={cloud3}
         y={80}
-        xInit={30}
+        xInit={25}
         layer={3}
         style={{ height: "34vh" }}
+      />
+      <Cloud
+        image={cloud2}
+        y={40}
+        xInit={70}
+        layer={22}
+        style={{ height: "20vh" }}
       />
       <SkyWriteContainer>
         <SkyWriteRoute route={route1} delay={0.5} />
