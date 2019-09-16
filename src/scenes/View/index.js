@@ -30,16 +30,11 @@ export default function View(props) {
 
   useEffect(() => {
     if (!cloudOffset) {
-      window.addEventListener(
-        "deviceorientation",
-        handleOrientationChange,
-        true
-      )
-      window.addEventListener("scroll", handleScrollChange, true)
+      window.addEventListener("deviceorientation", handleOrientationChange)
+      window.addEventListener("scroll", handleScrollChange)
     }
 
-    console.log("orientation", orientation)
-    setCloudOffset(orientation * 3 + scrollDist + mouseY * 1.2 - 1)
+    setCloudOffset(orientation * 2.5 + scrollDist + mouseY * 1.2 - 1)
   }, [
     cloudOffset,
     handleOrientationChange,
