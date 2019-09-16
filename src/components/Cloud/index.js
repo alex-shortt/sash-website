@@ -7,7 +7,7 @@ const Container = styled.div.attrs(props => ({
   style: {
     transform: `translateX(-${100 - props.x + 1}%) translateY(-${props.y}%)`,
     left: `${props.x + 1}vw`,
-    transition: `all ${props.anim === "true" ? "1s" : "0s"} linear`
+    transition: `all ${props.anim === "true" ? "0.5s" : "0s"} linear`
   }
 }))`
   position: absolute;

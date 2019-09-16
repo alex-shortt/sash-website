@@ -16,7 +16,7 @@ export default function Clouds(props) {
   const tiltOffset = orientation ? (orientation.beta / 180) * 2.4 : 0
   const mouseOffset = (mousePos[1] - 0.5) * 1.5
 
-  const offset = scrollOffset + tiltOffset + mouseOffset
+  const offset = (scrollOffset + tiltOffset + mouseOffset) * 0.5
 
   return (
     <>
