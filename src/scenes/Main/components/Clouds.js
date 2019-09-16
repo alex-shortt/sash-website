@@ -16,16 +16,24 @@ export default function Clouds(props) {
     <>
       <Cloud
         image={cloud1}
-        y={20}
         xInit={60}
+        y={10}
         offset={offset}
         layer={9}
         style={{ height: "25vh" }}
       />
       <Cloud
+        image={cloud5}
+        xInit={87}
+        y={22}
+        offset={offset}
+        layer={23}
+        style={{ height: "28vh" }}
+      />
+      <Cloud
         image={cloud2}
         xInit={0}
-        y={28}
+        y={50}
         offset={offset}
         layer={15}
         style={{ height: "30vh" }}
@@ -34,23 +42,23 @@ export default function Clouds(props) {
       <Cloud
         image={cloud3}
         xInit={50}
-        y={69}
+        y={64}
         offset={offset}
         layer={4}
         style={{ height: "30vh" }}
       />
       <Cloud
         image={cloud4}
-        y={80}
         xInit={20}
+        y={80}
         offset={offset}
         layer={24}
         style={{ height: "38vh" }}
       />
       <Cloud
         image={cloud5}
-        y={99}
         xInit={78}
+        y={99}
         offset={offset}
         layer={19}
         style={{ height: "35vh" }}
