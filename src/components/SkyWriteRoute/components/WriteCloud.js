@@ -23,7 +23,7 @@ const fadeIn = finalOpacity => keyframes`
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  transform: scale(1.3) translateX(${props => props.horizontalOffset}vw);
+  transform: scale(1.6) translateX(${props => props.horizontalOffset}vw);
   filter: brightness(${props => props.brightness});
   opacity: 0;
   animation: ${props => fadeIn(props.opacity)} 2.5s ease-out forwards;
@@ -36,7 +36,7 @@ export default function WriteCloud(props) {
   const image = useRef(
     cloudBitmaps[Math.floor(Math.random() * cloudBitmaps.length)]
   )
-  const brightness = useRef(Math.random() * 0.16 + 1)
+  const brightness = useRef(Math.random() * 0.25 + 1)
   const opacity = useRef(Math.random() * 0.2 + 0.8)
   const horizontalOffset = useRef(Math.random() * 0.5 - 0.5 / 2)
 
