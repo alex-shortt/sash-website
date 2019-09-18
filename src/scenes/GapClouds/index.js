@@ -1,10 +1,7 @@
 import React from "react"
-import tw from "tailwind.macro"
 import styled from "styled-components/macro"
 
-import Helmet from "components/Helmet"
 import Cloud from "components/Cloud"
-import cloud1 from "assets/clouds/cloud1.png"
 import cloud4 from "assets/clouds/cloud4.png"
 import cloud5 from "assets/clouds/cloud5.png"
 
