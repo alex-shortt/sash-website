@@ -35,14 +35,6 @@ export default function GapClouds(props) {
         offset={offset}
         style={{ height: "34vh" }}
       />
-      <Cloud
-        image={cloud1}
-        y={35}
-        xInit={35}
-        layer={4}
-        offset={offset}
-        style={{ height: "37vh" }}
-      />
     </Container>
   )
 }
