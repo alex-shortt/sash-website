@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import tw from "tailwind.macro"
-import styled from "styled-components/macro"
+import styled, { keyframes } from "styled-components/macro"
 import { Tween } from "react-gsap"
 
-const Container = styled.div.attrs(props => ({
-  style: {
-    transform: `translateX(${props.x}vw) translateX(-${100 -
-      props.x}%) translateY(-${props.y}%)`,
-    transition: `all ${props.anim === "true" ? "1s" : "0s"} linear`
-  }
-}))`
+const moveAcross = y => keyframes`
+  0% { transform: translateX(0vw) translateX(-100%) translateY(-${y}%) }
+  100% { transform: translateX(100vw) translateX(0%) translateY(-${y}%) }
+`
+
+const Container = styled.div`
   position: absolute;
   top: ${props => props.y}%;
   z-index: 0;
@@ -17,6 +16,9 @@ const Container = styled.div.attrs(props => ({
   height: 30vh;
   pointer-events: none;
   user-select: none;
+  animation: ${props => moveAcross(props.y)} ${props => props.velocity}s linear
+    infinite;
+  animation-delay: ${props => props.delay}s;
 `
 
 const Image = styled.img.attrs(props => ({
@@ -39,42 +41,22 @@ function getLayerStyles(layer) {
   // const blur = `${Math.max(((20 - layer) / 20) * 2.5, 0)}px`
   styles.filter = `brightness(${brightness})`
 
-  styles.duration = Math.max(((20 - layer) / 20) * 1.2 + 1, 1)
+  styles.yDuration = Math.max(((20 - layer) / 20) * 1.2 + 1, 1)
   styles.maxOffset = Math.max((layer / 20) * 40 + 20, 25)
-  styles.velocity = Math.min(Math.pow(layer / 20, 2) * 50 + 25, 80)
+  styles.xDuration = Math.max(((20 - layer) / 20) * 90 + 100, 90)
   return styles
 }
 
 export default function Cloud(props) {
   const { image, xInit = 0, y = 50, offset, layer } = props
 
-  const [moving, setMoving] = useState("false")
-  const [xPos, setXPos] = useState(xInit)
-  const [anim, setAnim] = useState("true")
+  const { yDuration, maxOffset, xDuration, ...styles } = getLayerStyles(layer)
 
-  const { duration, maxOffset, velocity, ...styles } = getLayerStyles(layer)
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (xPos > 100) {
-        setAnim("false")
-        setTimeout(() => setXPos(0), 10)
-      } else {
-        setAnim("true")
-        setXPos(xPos + velocity / 100)
-      }
-    }, 500)
-
-    if (moving === "false") {
-      setMoving("true")
-      setAnim("true")
-      setXPos(xPos + velocity / 100)
-    }
-  }, [moving, velocity, xPos])
+  const delay = (xInit / 100) * xDuration * -1
 
   return (
-    <Container x={xPos} y={y} anim={anim} style={styles}>
-      <Tween to={{ y: `${maxOffset * offset}px` }} duration={duration}>
+    <Container y={y} velocity={xDuration} delay={delay} style={styles}>
+      <Tween to={{ y: `${maxOffset * offset}px` }} duration={yDuration}>
         <Image src={image} />
       </Tween>
     </Container>
