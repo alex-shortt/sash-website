@@ -10,6 +10,7 @@ import useReactRouter from "use-react-router"
 import GlobalStyles from "styles/globalStyles"
 import FullScreenLoading from "components/FullScreenLoading"
 import ScrollToTop from "components/ScrollToTop"
+import Credits from "components/Credits"
 import GA from "services/ga"
 
 const View = React.lazy(() => import("scenes/View"))
@@ -27,6 +28,7 @@ export default function App() {
       <React.Suspense fallback={<FullScreenLoading />}>
         <Router>
           <GoogleAnalytics />
+          <Credits />
           <ScrollToTop>
             <Switch>
               <Route exact path="/" component={View} />
