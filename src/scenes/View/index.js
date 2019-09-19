@@ -3,10 +3,12 @@ import React, { useState, useCallback, useEffect } from "react"
 import Helmet from "components/Helmet"
 import Intro from "scenes/Intro"
 import Main from "scenes/Main"
+import Preload from "components/Preload"
 import GapClouds from "scenes/GapClouds"
 import { Landing, Gap, Content } from "components/Containers"
 
 export default function View(props) {
+  const [loading, setLoading] = useState("true")
   const [mouseY, setMouseY] = useState(0)
   const [orientation, setOrientation] = useState(0)
   const [scrollDist, setScrollDist] = useState(0)
@@ -44,8 +46,13 @@ export default function View(props) {
     scrollDist
   ])
 
+  if (loading === "true") {
+    return <Preload onDone={() => setLoading("false")} />
+  }
+
   return (
     <div onMouseMove={handleMousePositionChange}>
+      <Preload fadeOut />
       <Helmet title="Sash" />
       <Landing>
         <Intro offset={cloudOffset} />

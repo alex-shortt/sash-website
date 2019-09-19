@@ -34,10 +34,10 @@ const getRouteArray = route => {
 export default function SkyWriteRoute(props) {
   const { route, delay: rowDelay } = props
 
-  const planeVariation = useRef(Math.random() / 5)
+  const planeVariation = useRef(Math.random() / 2.5)
 
-  const planeTiming = [5.5 + planeVariation.current, rowDelay + 0.5] // time, delay
-  const cloudTiming = [rowDelay + 2 + 0.5, 0.1] // delay, iterative delay
+  const planeTiming = [5.5 + planeVariation.current, rowDelay + 1.5] // time, delay
+  const cloudTiming = [rowDelay + 2 + 1.5, 0.1] // delay, iterative delay
 
   return (
     <Container>
