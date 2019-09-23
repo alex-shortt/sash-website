@@ -10,7 +10,7 @@ const Container = styled.img`
   left: 0;
   width: auto;
   height: 100%;
-  transform: scale(1.4) translateY(-50%)
+  transform: translateY(-50%)
     ${props =>
       props.start === "true"
         ? "translateX(100%) translateX(100vw)"

@@ -16,7 +16,7 @@ const Space = tw.div`
 
 const WriteContainer = styled.div`
   width: 100vw;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 2rem;
   box-sizing: border-box;

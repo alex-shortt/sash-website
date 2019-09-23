@@ -48,11 +48,11 @@ const Wrapper = styled.div`
   height: 100%;
   ${props => props.fadeOut && fadeOutApplied};
   animation-delay: 0.25s;
+  pointer-events: none;
 `
 
 const Container = styled.div`
   opacity: 0;
-  pointer-events: none;
   width: 0;
   height: 0;
   display: none;
@@ -73,18 +73,16 @@ export default function Preload(props) {
   useEffect(() => {
     if (init === "false") {
       setInit("true")
-      setTimeout(onDone, 2500)
+      setTimeout(onDone, 2250)
     }
 
     if (numLoaded === assets.length) {
-      console.log("done")
       onDone()
     }
   }, [init, numLoaded, onDone])
 
   const onLoad = useCallback(() => {
     numLoadedThisRender += 1
-    console.log("this render: ", numLoadedThisRender)
     setNumLoaded(numLoaded + numLoadedThisRender)
   }, [])
 
