@@ -16,7 +16,7 @@ export default function Song(props) {
   return (
     <Container>
       <Image src={albumCover} />
-      <Text>Sleepy Eyes</Text>
+      <Text>SMILE</Text>
       <Subtitle>Now streaming on all platforms</Subtitle>
       <br />
       <br />

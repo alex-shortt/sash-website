@@ -4,7 +4,6 @@ import styled from "styled-components/macro"
 
 export default styled.button`
   color: #056782;
-  font-weight: 900;
   letter-spacing: 1.3px;
   font-size: 2rem;
   background: white;
