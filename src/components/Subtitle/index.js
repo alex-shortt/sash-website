@@ -9,4 +9,5 @@ export default styled.h1`
   font-size: 2rem;
   margin: 0.4em 0;
   font-style: italic;
+  text-shadow: 0px 0px 5px #03313fcc;
 `

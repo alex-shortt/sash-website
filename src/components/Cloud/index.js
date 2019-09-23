@@ -36,6 +36,9 @@ function getLayerStyles(layer) {
 
   styles.zIndex = layer
   styles.opacity = Math.min(1, (layer / 20) * 0.7 + 0.4)
+  if (layer > 20) {
+    styles.opacity = 0.85
+  }
 
   const brightness = Math.max((layer / 20) * 0.8, 1)
   // const blur = `${Math.max(((20 - layer) / 20) * 2.5, 0)}px`
