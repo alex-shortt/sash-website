@@ -1,12 +1,8 @@
 import React from "react"
-import tw from "tailwind.macro"
 import styled from "styled-components/macro"
-
-import Helmet from "components/Helmet"
 
 import Clouds from "./components/Clouds"
 import Song from "./components/Song"
-import Tickets from "./components/Tickets"
 
 const Wrapper = styled.div`
   width: 100%;
@@ -31,7 +27,6 @@ export default function Main(props) {
       <Wrapper>
         <Song />
         <Spacer />
-        <Tickets />
       </Wrapper>
     </>
   )

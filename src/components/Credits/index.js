@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import tw from "tailwind.macro"
 import styled from "styled-components/macro"
 
 export default function Credits(props) {

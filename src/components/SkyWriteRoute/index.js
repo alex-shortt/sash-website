@@ -1,17 +1,18 @@
 import React, { useRef } from "react"
-import tw from "tailwind.macro"
 import styled from "styled-components/macro"
 
 import Plane from "./components/Plane"
 import WriteCloud from "./components/WriteCloud"
 
-const Container = tw.div`
-  w-full relative
-  justify-center items-center
+const Container = styled.div`
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 `
 
-const Space = tw.div`
-  flex-1
+const Space = styled.div`
+  flex: 1;
 `
 
 const WriteContainer = styled.div`

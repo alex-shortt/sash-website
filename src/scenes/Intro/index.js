@@ -1,5 +1,4 @@
-import React, { useRef, useEffect } from "react"
-import tw from "tailwind.macro"
+import React from "react"
 import styled from "styled-components/macro"
 
 import Cloud from "components/Cloud"
@@ -8,14 +7,18 @@ import cloud1 from "assets/clouds/cloud1.png"
 import cloud2 from "assets/clouds/cloud2.png"
 import cloud3 from "assets/clouds/cloud3.png"
 
-const Container = tw.div`
-    w-full h-full
-    flex justify-center items-center
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
-const Text = tw.h1`
-    text-center text-white
-    m-0
+const Text = styled.h1`
+  text-align: center;
+  margin: 0;
+  color: white;
 `
 
 const SkyWriteContainer = styled.div`

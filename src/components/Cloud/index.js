@@ -1,5 +1,4 @@
 import React from "react"
-import tw from "tailwind.macro"
 import styled, { keyframes } from "styled-components/macro"
 import { Tween } from "react-gsap"
 

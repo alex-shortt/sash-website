@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import tw from "tailwind.macro"
 import styled from "styled-components/macro"
 
 import planeImage from "assets/plane/plane.png"

@@ -1,5 +1,4 @@
 import React, { useRef } from "react"
-import tw from "tailwind.macro"
 import styled, { keyframes } from "styled-components/macro"
 
 import cloud0 from "assets/cloudBitmaps/cloud-0.png"

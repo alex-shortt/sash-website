@@ -1,5 +1,4 @@
 import React from "react"
-import tw from "tailwind.macro"
 import styled from "styled-components/macro"
 
 import albumCover from "assets/content/album-cover.jpg"
