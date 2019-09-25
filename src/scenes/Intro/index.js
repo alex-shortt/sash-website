@@ -47,7 +47,7 @@ const AngleDown = styled.div`
   position: absolute;
   opacity: 0.7;
   filter: blur(0.5px);
-  bottom: 25px;
+  bottom: 6vh;
   width: 25px;
   height: 25px;
   border: 5px solid white;
