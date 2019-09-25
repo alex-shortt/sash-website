@@ -5,7 +5,5 @@ export default styled.h1`
   color: white;
   font-weight: 900;
   letter-spacing: 1.3px;
-  font-size: 3rem;
-  margin: 0.4em 0;
-  text-shadow: 0px 0px 5px #03313fcc;
+  font-size: 2rem;
 `

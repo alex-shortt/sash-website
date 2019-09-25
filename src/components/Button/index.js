@@ -3,6 +3,7 @@ import styled from "styled-components/macro"
 
 export default styled.button`
   color: #056782;
+  font-weight: 900;
   letter-spacing: 1.3px;
   font-size: 2rem;
   background: white;
@@ -11,7 +12,6 @@ export default styled.button`
   cursor: pointer;
   text-transform: uppercase;
   transition: all 0.15s linear;
-  box-shadow: 0px 0px 5px #03313fcc;
 
   &:hover {
     color: white;
