@@ -19,7 +19,9 @@ export default function Song(props) {
       <Subtitle>Now streaming on all platforms</Subtitle>
       <br />
       <br />
-      <Button>Listen Now</Button>
+      <a href="https://equitydistro.ffm.to/24ejokg">
+        <Button>Listen Now</Button>
+      </a>
     </Container>
   )
 }
