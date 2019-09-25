@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components/macro"
+import styled, { keyframes } from "styled-components/macro"
 
 import Cloud from "components/Cloud"
 import SkyWriteRoute from "components/SkyWriteRoute"
@@ -29,6 +29,32 @@ const SkyWriteContainer = styled.div`
   align-items: center;
   flex-direction: column;
   z-index: 20;
+`
+
+const bounceAnim = keyframes`
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  40% {
+    transform: translateY(-30px) rotate(45deg);
+  }
+  60% {
+    transform: translateY(-15px) rotate(45deg);
+  }
+`
+
+const AngleDown = styled.div`
+  position: absolute;
+  opacity: 0.7;
+  filter: blur(0.5px);
+  bottom: 25px;
+  width: 25px;
+  height: 25px;
+  border: 5px solid white;
+  border-left: 0;
+  border-top: 0;
+  transform: rotate(45deg);
+  animation: ${bounceAnim} 3.5s infinite;
 `
 
 export default function Intro(props) {
@@ -73,6 +99,7 @@ export default function Intro(props) {
         <SkyWriteRoute route={route4} delay={0.2} />
         <SkyWriteRoute route={route5} delay={0.55} />
       </SkyWriteContainer>
+      <AngleDown />
     </Container>
   )
 }
