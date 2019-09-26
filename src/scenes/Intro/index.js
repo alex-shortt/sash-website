@@ -45,9 +45,9 @@ const bounceAnim = keyframes`
 
 const AngleDown = styled.div`
   position: absolute;
-  opacity: 0.7;
-  filter: blur(0.5px);
-  bottom: 6vh;
+  opacity: 0.5;
+  filter: blur(0.8px);
+  bottom: 20vh;
   width: 25px;
   height: 25px;
   border: 5px solid white;
