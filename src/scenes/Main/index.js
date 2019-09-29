@@ -3,6 +3,7 @@ import styled from "styled-components/macro"
 
 import Clouds from "./components/Clouds"
 import Song from "./components/Song"
+import SongTwo from "./components/SongTwo"
 import Tickets from "./components/Tickets"
 
 const Wrapper = styled.div`
@@ -18,7 +19,7 @@ const Wrapper = styled.div`
 
 const Spacer = styled.div`
   width: 100%;
-  height: 300px;
+  height: 175px;
 `
 
 export default function Main(props) {
@@ -27,6 +28,8 @@ export default function Main(props) {
       <Clouds {...props} />
       <Wrapper>
         <Song />
+        <Spacer />
+        <SongTwo />
         <Spacer />
         <Tickets />
       </Wrapper>
