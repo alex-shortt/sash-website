@@ -4,7 +4,6 @@ import styled from "styled-components/macro"
 import Clouds from "./components/Clouds"
 import Song from "./components/Song"
 import SongTwo from "./components/SongTwo"
-import Tickets from "./components/Tickets"
 
 const Wrapper = styled.div`
   width: 100%;
@@ -30,8 +29,6 @@ export default function Main(props) {
         <Song />
         <Spacer />
         <SongTwo />
-        <Spacer />
-        <Tickets />
       </Wrapper>
     </>
   )
