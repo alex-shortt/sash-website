@@ -26,13 +26,13 @@ export default function Video(props) {
     <Container>
       <VideoContainer>
         <IFrame
-          src="https://www.youtube.com/embed/IxGvm6btP1A"
+          src="https://www.youtube.com/embed/7cLrN68DEHU"
           frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
       </VideoContainer>
-      <Text>SASH - Smile (Official Music Video)</Text>
+      <Text>SASH - Smile (Official Video)</Text>
     </Container>
   )
 }
