@@ -4,6 +4,8 @@ import styled from "styled-components/macro"
 import Clouds from "./components/Clouds"
 import Song from "./components/Song"
 import SongTwo from "./components/SongTwo"
+import Shop from "./components/Shop"
+import Video from "./components/Video"
 
 const Wrapper = styled.div`
   width: 100%;
@@ -18,7 +20,7 @@ const Wrapper = styled.div`
 
 const Spacer = styled.div`
   width: 100%;
-  height: 175px;
+  height: 125px;
 `
 
 export default function Main(props) {
@@ -26,6 +28,10 @@ export default function Main(props) {
     <>
       <Clouds {...props} />
       <Wrapper>
+        <Video />
+        <Spacer />
+        <Shop />
+        <Spacer />
         <Song />
         <Spacer />
         <SongTwo />
